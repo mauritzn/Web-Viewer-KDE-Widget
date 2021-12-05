@@ -10,12 +10,15 @@ Item {
     Layout.fillWidth: true
     Layout.fillHeight: true
 
+    // Defaults should probably be changed, but the widget isn't really intended to run at these sizes,
+    // it's just here to make sure it doesn't start as a tiny square.
     Layout.preferredWidth: 640
     Layout.preferredHeight: 360
 
-    // removes border around widget (there is an option to add it back under: Rotate | Configure ... | Show Background)
+    // Removes border around widget (there is an option to add it back under: Rotate | Configure ... | Show Background)
     Plasmoid.backgroundHints: PlasmaCore.Types.ShadowBackground | PlasmaCore.Types.ConfigurableBackground
 
+    // Link contextmenu (shows if right clicking a link)
     PlasmaComponents.Menu {
         id: linkContextMenu
         visualParent: webview
@@ -35,6 +38,7 @@ Item {
         }
     }
 
+    // Default contextmenu (doesn't show if right-clicking selected text)
     PlasmaComponents.Menu {
         id: defaultContextMenu
         visualParent: webview
@@ -58,17 +62,15 @@ Item {
         }
     }
 
-    // auto refresh the current page or the set url at the set interval
+    // Auto refresh the current page or the set url at the set interval
     Timer {
         id: autoRefreshTimer
-        interval: 1000
+        interval: plasmoid.configuration.autoRefreshInterval * 1000
         repeat: true
         onTriggered: {
             if(plasmoid.configuration.autoRefresh === 1) {
-                //console.log("test timer #refresh");
                 webview.url = plasmoid.configuration.url;
             } else {
-                //console.log("test timer #reload");
                 webview.reload();
             }
         }
@@ -80,6 +82,7 @@ Item {
         Component.onCompleted: url = plasmoid.configuration.url;
 
         onLoadingChanged: {
+            // webpage has loaded
             if (loadRequest.status === WebEngineLoadRequest.LoadSucceededStatus) {
                 // mute/unmute audio
                 if(plasmoid.configuration.audioMuted === true) {
@@ -95,7 +98,8 @@ Item {
                     autoRefreshTimer.stop();
                 }
 
-                // disable scrollbar
+                // Disable scrollbar
+                // (not perfect, since some websites implement scrolling on other elements and don't use the html/body for scrolling (like YouTube))
                 if(plasmoid.configuration.disableScrolling === true) {
                     /* webview.runJavaScript("var newStyleElement = document.createElement('style');\
                                         newStyleElement.type = 'text/css';\
@@ -112,7 +116,7 @@ Item {
             }
         }
 
-        // INFO: handles "PlasmaComponents.Menu"
+        // Handles "PlasmaComponents.Menu"
         onContextMenuRequested: {
             if (request.mediaType === ContextMenuRequest.MediaTypeNone && request.linkUrl.toString() !== "") {
                 linkContextMenu.link = request.linkUrl;
