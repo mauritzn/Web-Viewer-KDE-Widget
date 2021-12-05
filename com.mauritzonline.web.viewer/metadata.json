@@ -1,0 +1,25 @@
+{
+    "KPlugin": {
+        "Id": "com.mauritzonline.web.viewer",
+        "Name": "Web Viewer",
+        "Description": "Add a webpage on your desktop. With options for auto refresh, audio muting, disabling scrolling.",
+        "Version": "0.0.1",
+        "Website": "https://github.com/mauritzn/Web-Viewer-KDE-Widget",
+        "Authors": [
+            {
+                "Email": "mail@mauritzonline.com",
+                "Name": "Mauritz Nilsson"
+            }
+        ],
+        "License": "MIT",
+        "Category": "Online Services",
+        "Icon": "applications-internet",
+        "ServiceTypes": [
+            "Plasma/Applet"
+        ]
+    },
+    "X-KDE-ParentApp": "",
+    "X-Plasma-API": "declarativeappletscript",
+    "X-Plasma-MainScript": "ui/main.qml",
+    "X-Plasma-StandAloneApp": true
+}
