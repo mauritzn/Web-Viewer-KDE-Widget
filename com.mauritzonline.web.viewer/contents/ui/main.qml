@@ -18,7 +18,7 @@ Item {
     // Removes border around widget (there is an option to add it back under: Rotate | Configure ... | Show Background)
     Plasmoid.backgroundHints: PlasmaCore.Types.ShadowBackground | PlasmaCore.Types.ConfigurableBackground
 
-    // Link contextmenu (shows if right clicking a link)
+    // Link contextmenu (shows if right-clicking a link)
     PlasmaComponents.Menu {
         id: linkContextMenu
         visualParent: webview
