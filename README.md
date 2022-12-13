@@ -13,4 +13,4 @@ plasmawindowed com.mauritzonline.web.viewer
 
 ## Installing the Widget
 
-To install the widget add the `com.mauritzonline.web.viewer` folder to `/home/mare/.local/share/plasma/plasmoids` *(create the folder if it does not exist)*.
+To install the widget add the `com.mauritzonline.web.viewer` folder to `/home/<USER>/.local/share/plasma/plasmoids` *(create the folder if it does not exist)*.
