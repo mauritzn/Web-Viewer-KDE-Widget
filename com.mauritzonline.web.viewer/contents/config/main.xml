@@ -27,11 +27,11 @@
     </entry>
 
     <entry name="width" type="UInt">
-        <default>640</default>
+        <default>150</default>
     </entry>
 
     <entry name="height" type="UInt">
-        <default>360</default>
+        <default>150</default>
     </entry>
   </group>
 </kcfg>

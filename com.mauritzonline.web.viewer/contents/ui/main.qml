@@ -8,8 +8,6 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 Item {
     id: widget
-    Layout.fillWidth: true
-    Layout.fillHeight: true
 
     // Main widget panel
     Plasmoid.fullRepresentation: Item {
