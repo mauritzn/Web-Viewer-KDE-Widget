@@ -25,5 +25,13 @@
     <entry name="disableScrolling" type="Bool">
         <default>false</default>
     </entry>
+
+    <entry name="width" type="UInt">
+        <default>640</default>
+    </entry>
+
+    <entry name="height" type="UInt">
+        <default>360</default>
+    </entry>
   </group>
 </kcfg>
