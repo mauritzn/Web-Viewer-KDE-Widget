@@ -3,7 +3,7 @@
         "Id": "com.mauritzonline.web.viewer",
         "Name": "Web Viewer",
         "Description": "Add a webpage on your desktop. With options for auto refresh, audio muting, disabling scrolling.",
-        "Version": "0.0.1",
+        "Version": "0.0.2",
         "Website": "https://github.com/mauritzn/Web-Viewer-KDE-Widget",
         "Authors": [
             {
